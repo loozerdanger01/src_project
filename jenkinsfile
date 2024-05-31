@@ -1,14 +1,14 @@
-pipeline {
-	agent {label 'maven ' }
+pipline {
+    agent {label 'maven'}
 
-environment {
-	PATH = "/opt/apache-maven-3.9.4/bin:$PATH"
-}
-	stages {
-		stege("maven code build"){
-			steps {
-				sh 'mvn clean deploy'
-				}
-			}
-		}
+    environment{
+        PATH = "/opt/apache-maven-3.9.4/bin:$PATH"
+    }
+    stages{
+        stages("maven_code_build"){
+            steps{
+                sh 'mvn clean deploy' 
+            }
+        }
+    }
 }
